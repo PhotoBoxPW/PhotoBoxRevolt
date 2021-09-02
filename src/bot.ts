@@ -52,6 +52,16 @@ process.once('beforeExit', async () => {
   process.exit(0);
 });
 
+process.on('unhandledRejection', (reason, p) => {
+  client.emit('logger', 'error', 'sys', ['Unhandled rejection', reason, p]);
+});
+
+process.on('uncaughtException', async (err) => {
+  client.emit('logger', 'error', 'sys', ['Uncaught exception', err]);
+  await client.disconnect();
+  process.exit(1);
+});
+
 export async function connect() {
   await client.connect();
   client.bot.users.edit({
