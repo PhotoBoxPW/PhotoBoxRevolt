@@ -83,15 +83,15 @@ export default class ShipCommand extends GenerateCommand {
 
     const users: User[] = [];
 
-    if (args[0] && USER_REGEX.test(args[0]) && ctx.message.mentions) {
+    if (args[0] && USER_REGEX.test(args[0])) {
       const id = args[0].match(USER_REGEX)![1];
-      const mention = ctx.message.mentions.find((user) => user && user._id === id);
+      const mention = await this.client.bot.users.fetch(id);
       if (mention) users.push(mention);
     }
 
-    if (args[1] && USER_REGEX.test(args[1]) && ctx.message.mentions) {
+    if (args[1] && USER_REGEX.test(args[1])) {
       const id = args[1].match(USER_REGEX)![1];
-      const mention = ctx.message.mentions.find((user) => user && user._id === id);
+      const mention = await this.client.bot.users.fetch(id);
       if (mention) users.push(mention);
     } else users.unshift(ctx.author);
 

@@ -26,9 +26,9 @@ export default class AvatarCommand extends GeneralCommand {
 
   async run(ctx: CommandContext) {
     let user = ctx.author;
-    if (ctx.args[0] && USER_REGEX.test(ctx.args[0]) && ctx.message.mentions) {
+    if (ctx.args[0] && USER_REGEX.test(ctx.args[0])) {
       const id = ctx.args[0].match(USER_REGEX)![1];
-      const mention = ctx.message.mentions.find((user) => user && user._id === id);
+      const mention = await this.client.bot.users.fetch(id);
       if (mention) user = mention;
     }
 

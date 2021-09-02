@@ -28,6 +28,7 @@ export abstract class GeneralCommand extends VoltareCommand {
   cleanContent(content: string, message: Message) {
     return content
       .replace(USER_REGEX, (matched, id) => {
+        // TODO fetch users instead
         if (!message.mentions) return matched;
         const user = message.mentions.find((m) => m && m._id === id);
         return user ? `@${user.username}` : matched;
@@ -287,9 +288,9 @@ export abstract class UserCommand extends GenerateCommand {
     if (this.usingText) {
       const { result, args } = readFlags([{ name: 'user', shortFlag: 'u', getsString: true }], ctx);
 
-      if (typeof result.user === 'string' && USER_REGEX.test(result.user) && ctx.message.mentions) {
+      if (typeof result.user === 'string' && USER_REGEX.test(result.user)) {
         const id = result.user.match(USER_REGEX)![1];
-        const mention = ctx.message.mentions.find((user) => user && user._id === id);
+        const mention = await this.client.bot.users.fetch(id);
         if (mention) user = mention;
       }
 
@@ -304,9 +305,9 @@ export abstract class UserCommand extends GenerateCommand {
 
       await this.generate(ctx, payload);
     } else {
-      if (ctx.args[0] && USER_REGEX.test(ctx.args[0]) && ctx.message.mentions) {
+      if (ctx.args[0] && USER_REGEX.test(ctx.args[0])) {
         const id = ctx.args[0].match(USER_REGEX)![1];
-        const mention = ctx.message.mentions.find((user) => user && user._id === id);
+        const mention = await this.client.bot.users.fetch(id);
         if (mention) user = mention;
       }
 
@@ -337,15 +338,15 @@ export abstract class DoubleUserCommand extends GenerateCommand {
   async run(ctx: CommandContext) {
     const users: User[] = [];
 
-    if (ctx.args[0] && USER_REGEX.test(ctx.args[0]) && ctx.message.mentions) {
+    if (ctx.args[0] && USER_REGEX.test(ctx.args[0])) {
       const id = ctx.args[0].match(USER_REGEX)![1];
-      const mention = ctx.message.mentions.find((user) => user && user._id === id);
+      const mention = await this.client.bot.users.fetch(id);
       if (mention) users.push(mention);
     }
 
-    if (ctx.args[1] && USER_REGEX.test(ctx.args[1]) && ctx.message.mentions) {
+    if (ctx.args[1] && USER_REGEX.test(ctx.args[1])) {
       const id = ctx.args[1].match(USER_REGEX)![1];
-      const mention = ctx.message.mentions.find((user) => user && user._id === id);
+      const mention = await this.client.bot.users.fetch(id);
       if (mention) users.push(mention);
     } else users.unshift(ctx.author);
 

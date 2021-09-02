@@ -3,8 +3,6 @@ import emojilib from 'emojilib';
 import { GeneralCommand } from '../../util/abstracts';
 import { stripIndents } from 'common-tags';
 
-// TODO parse :name: emojis bc revolt lol
-
 export interface ParseEmojiResult {
   url: string;
   raw: string;

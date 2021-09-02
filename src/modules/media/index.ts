@@ -179,9 +179,9 @@ export default class MediaModule<
       }
 
       // Mentioned User's Avatar
-      if (USER_REGEX.test(context) && message.mentions) {
+      if (USER_REGEX.test(context)) {
         const id = context.match(USER_REGEX)![1];
-        const mention = message.mentions.find((user) => user && user._id === id);
+        const mention = await this.client.bot.users.fetch(id);
         if (mention) {
           const url = mention.generateAvatarURL(undefined, true);
           if (url) return { url, from: 'mention' };
