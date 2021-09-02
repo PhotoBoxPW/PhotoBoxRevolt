@@ -57,7 +57,7 @@ export async function connect() {
   client.bot.users.edit({
     // @ts-ignore
     status: PRODUCTION
-      ? { text: `pbox help (📷❓`, presence: 'Online' }
+      ? { text: `pbox help (📷❓)`, presence: 'Online' }
       : { text: `DEVELOPER MODE / pbx help (📸❓)`, presence: 'Busy' }
   });
 }
