@@ -1,6 +1,6 @@
 import { stripIndents } from 'common-tags';
 import { CommandContext, VoltareClient } from 'voltare';
-import { USER_REGEX } from '../../modules/media';
+import { USER_REGEX, CHANNEL_REGEX } from '../../modules/media';
 import { readFlags } from '../../util';
 import { GeneralCommand } from '../../util/abstracts';
 
@@ -35,7 +35,7 @@ export default class RoboHashCommand extends GeneralCommand {
 
     const value =
       (args[0] && USER_REGEX.test(args[0]) ? args[0].match(USER_REGEX)![1] : null) ||
-      (args[0] && /<#([A-Z\d]+)>/.test(args[0]) ? args[0].match(/<#([A-Z\d]+)>/)![1] : null) ||
+      (args[0] && CHANNEL_REGEX.test(args[0]) ? args[0].match(CHANNEL_REGEX)![1] : null) ||
       args[0] ||
       ctx.author._id;
 

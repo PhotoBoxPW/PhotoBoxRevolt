@@ -8,6 +8,7 @@ import GetMediaCommand from './commands/getmedia';
 import { iterateFolder } from 'voltare/lib/util';
 
 export const USER_REGEX = /<@([A-Z\d]+)>/;
+export const CHANNEL_REGEX = /<#([A-Z\d]+)>/;
 export const ID_REGEX = /[A-Z\d]{26}/;
 export const URL_REGEX = /https?:\/\/[^\s<|]+[^<.,:;"')\]\s>|*_~`]/i;
 
@@ -150,6 +151,16 @@ export default class MediaModule<
     }
 
     if (context) {
+      // Channel Icon
+      if (
+        ['[channel]', '[chn]', '[channelicon]', '[chnicon]', '[cicon]', '[ci]', '[c]'].includes(context) &&
+        message.channel &&
+        message.channel.icon
+      ) {
+        const url = this.client.bot.generateFileURL(message.channel.icon);
+        if (url) return { url, from: 'channel-icon' };
+      }
+
       // Server Icon
       if (
         ['[icon]', '[i]', '[server]', '[s]'].includes(context) &&
@@ -185,6 +196,16 @@ export default class MediaModule<
         if (mention) {
           const url = mention.generateAvatarURL(undefined, true);
           if (url) return { url, from: 'mention' };
+        }
+      }
+
+      // Mentioned Channel's Icon
+      if (CHANNEL_REGEX.test(context)) {
+        const id = context.match(CHANNEL_REGEX)![1];
+        const mention = await this.client.bot.channels.fetch(id);
+        if (mention && mention.icon) {
+          const url = this.client.bot.generateFileURL(mention.icon);
+          if (url) return { url, from: 'channel-mention' };
         }
       }
 

@@ -18,7 +18,7 @@ import {
   UserPayload,
   WantedPayload
 } from '../modules/imgsrv/payload';
-import MediaModule, { USER_REGEX } from '../modules/media';
+import MediaModule, { USER_REGEX, CHANNEL_REGEX } from '../modules/media';
 
 export abstract class GeneralCommand extends VoltareCommand {
   get mediaModule() {
@@ -33,7 +33,7 @@ export abstract class GeneralCommand extends VoltareCommand {
         const user = message.mentions.find((m) => m && m._id === id);
         return user ? `@${user.username}` : matched;
       })
-      .replace(/<#([A-Z\d]+)>/, (matched, id) => {
+      .replace(CHANNEL_REGEX, (matched, id) => {
         if (!message.channel?.server) return matched;
         const channel = message.channel.server.channels.find((r) => r && r._id === id);
         return channel ? `#${channel.name}` : matched;
