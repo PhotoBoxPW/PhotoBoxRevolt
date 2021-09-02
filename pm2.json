@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "PhotoBox4",
+      "script": "yarn",
+      "args": "start:prod"
+    }
+  ]
+}

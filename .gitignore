@@ -1,0 +1,13 @@
+# Packages
+node_modules/
+
+# Log files
+logs/
+*.log
+
+# Miscellaneous
+.tmp/
+.vscode/
+config/*
+!config/_default.js
+dist/

@@ -1,0 +1,52 @@
+{
+  "name": "photobox-revolt",
+  "version": "1.0.0",
+  "description": "A premier image manipulation Revolt bot",
+  "private": true,
+  "main": "dist/index.js",
+  "repository": "https://github.com/PhotoBoxPW/PhotoBoxRevolt",
+  "author": "Snazzah",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd dist && node index.js",
+    "start:prod": "cd dist && NODE_ENV=production node index.js",
+    "build": "npx rimraf dist && tsc",
+    "dev": "devScript",
+    "lint": "npx eslint --ext .ts ./src",
+    "lint:fix": "npx eslint --ext .ts ./src --fix"
+  },
+  "devScript": {
+    "depCheck": false
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "common-tags": "^1.8.0",
+    "config": "^3.3.3",
+    "dayjs": "^1.10.4",
+    "emojilib": "^3.0.1",
+    "lodash": "^4.17.21",
+    "needle": "^3.0.0",
+    "pretty-ms": "^7.0.1",
+    "triple-beam": "^1.3.0",
+    "voltare": "^0.3.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/common-tags": "^1.8.0",
+    "@types/config": "^0.0.39",
+    "@types/lodash": "^4.14.168",
+    "@types/needle": "^2.5.1",
+    "@types/node": "^16.4.12",
+    "@types/validator": "^13.1.3",
+    "@types/ws": "^7.4.7",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "ts-devscript": "^3.0.5",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.1.5"
+  }
+}
