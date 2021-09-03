@@ -2210,10 +2210,10 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
-voltare@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/voltare/-/voltare-0.3.1.tgz#a21265f95c532b27ce723cebd2e7a715dd5d6f6f"
-  integrity sha512-SiBEVlYDtLjioKLfxQf8/hmlQzjxflm/eD2pa1aEjudzAwrvULxOuxq4c/yHHq2x62MgD9Q+mhSPwdiFFizViQ==
+voltare@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/voltare/-/voltare-0.3.2.tgz#730347beaf8d20eca71ee0945ae9a32a48bb7a33"
+  integrity sha512-WzeoT7k5iC/chBenmepRBBM/9P2aszb6f/xlblPrcW3f2R5Ay/DPH4wQy3tTz8Zegdp+pA2ydw1uDv9yJeQh1w==
   dependencies:
     "@discordjs/collection" "^0.2.1"
     common-tags "^1.8.0"
