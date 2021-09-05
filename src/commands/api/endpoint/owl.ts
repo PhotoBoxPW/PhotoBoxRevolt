@@ -3,6 +3,12 @@ import { PictureEndpointCommand } from '../../../util/abstracts';
 
 export default class OwlCommand extends PictureEndpointCommand {
   url = 'http://pics.floofybot.moe/owl';
+  katex = {
+    emoji: '🦉',
+    text: 'Owl!',
+    textColor: '#ffffff',
+    bgColor: '#e58e26'
+  };
 
   constructor(client: VoltareClient<any>) {
     super(client, {

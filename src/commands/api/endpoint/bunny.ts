@@ -3,7 +3,13 @@ import { PictureEndpointCommand } from '../../../util/abstracts';
 
 export default class BunnyCommand extends PictureEndpointCommand {
   url = 'https://hi.snaz.in/api/v1/bunnies/random.json';
-  credit = 'hi.snaz.in & bunnies.media';
+  credit = 'hi.snaz.in \\& bunnies.media';
+  katex = {
+    emoji: '🐇',
+    text: 'Bunny!',
+    textColor: '#333333',
+    bgColor: '#ecf0f1'
+  };
 
   constructor(client: VoltareClient<any>) {
     super(client, {

@@ -4,6 +4,12 @@ import { PictureEndpointCommand } from '../../../util/abstracts';
 export default class CatCommand extends PictureEndpointCommand {
   url = 'https://aws.random.cat/meow';
   credit = 'random.cat';
+  katex = {
+    emoji: '🐈',
+    text: 'Cat!',
+    textColor: '#ffffff',
+    bgColor: '#cd6133'
+  };
 
   constructor(client: VoltareClient<any>) {
     super(client, {

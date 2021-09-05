@@ -361,10 +361,22 @@ export abstract class DoubleUserCommand extends GenerateCommand {
   }
 }
 
+export interface PictureEndpointKatex {
+  emoji?: string;
+  bgColor: string;
+  textColor: string;
+  text: string;
+}
+
 export abstract class PictureEndpointCommand extends GeneralCommand {
   url = '';
   credit = '';
   headers = {};
+  katex: PictureEndpointKatex = {
+    bgColor: 'transparent',
+    textColor: 'default',
+    text: 'Image Link'
+  };
 
   constructor(client: VoltareClient<any>, opts: CommandOptions) {
     super(
@@ -388,10 +400,19 @@ export abstract class PictureEndpointCommand extends GeneralCommand {
   async run(ctx: CommandContext) {
     try {
       ctx.channel.startTyping();
-      const res = await needle('get', this.url, { headers: this.headers, timeout: 5000 });
+      const res = await needle('get', this.url, { headers: this.headers, timeout: 5000, follow: 3 });
       ctx.channel.stopTyping();
       if (res.statusCode && res.statusCode >= 200 && res.statusCode < 300) {
-        return `${this.credit ? `Powered by **${this.credit}** - ` : ''}[Image Link](${this.toImage(res)})`;
+        return stripIndents`
+          [$\\large\\colorbox{${this.katex.bgColor}}{${this.katex.emoji || ''}\\color{${
+          this.katex.textColor
+        }}\\textsf{${this.katex.emoji ? ' ' : ''}${this.katex.text}}}$](${this.toImage(res)} "Image Link")
+          ${
+            this.credit
+              ? `$\\colorbox{#333333}{\\color{#ffffff}\\textsf{Powered by \\textbf{${this.credit}}}}$`
+              : ''
+          }
+        `;
       } else return `The service gave us a ${res.statusCode || 'bad error'}! Try again later!`;
     } catch (e) {
       ctx.channel.stopTyping();

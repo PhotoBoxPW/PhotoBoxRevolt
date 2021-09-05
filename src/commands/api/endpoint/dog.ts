@@ -4,6 +4,12 @@ import { PictureEndpointCommand } from '../../../util/abstracts';
 export default class DogCommand extends PictureEndpointCommand {
   url = 'https://random.dog/woof.json';
   credit = 'random.dog';
+  katex = {
+    emoji: '🐕',
+    text: 'Dog!',
+    textColor: '#ffffff',
+    bgColor: '#A38552'
+  };
 
   constructor(client: VoltareClient<any>) {
     super(client, {
