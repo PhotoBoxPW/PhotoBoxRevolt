@@ -2,8 +2,13 @@
   "apps": [
     {
       "name": "PhotoBox Revolt",
-      "script": "yarn",
-      "args": "start:prod"
+      "script": "dist/index.js",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
     }
   ]
 }

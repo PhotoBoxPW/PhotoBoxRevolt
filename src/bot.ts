@@ -48,7 +48,7 @@ process.once('SIGINT', async () => {
 
 process.once('beforeExit', async () => {
   client.emit('logger', 'warn', 'sys', ['Exiting....']);
-  await client.disconnect();
+  await disconnect();
   process.exit(0);
 });
 
@@ -58,9 +58,11 @@ process.on('unhandledRejection', (reason, p) => {
 
 process.on('uncaughtException', async (err) => {
   client.emit('logger', 'error', 'sys', ['Uncaught exception', err]);
-  await client.disconnect();
+  await disconnect();
   process.exit(1);
 });
+
+client.once('disconnected', () => connect());
 
 export async function connect() {
   await client.connect();
