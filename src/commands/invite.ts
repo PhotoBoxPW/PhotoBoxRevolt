@@ -17,6 +17,6 @@ export default class InviteCommand extends GeneralCommand {
   }
 
   async run() {
-    return '[$\\color{00a99d}\\fbox{\\textbf{\\textsf{+ Add PhotoBox}}}$](https://app.revolt.chat/bot/01FE6KMPV60ZYTSE7TTQJ4TCCQ)';
+    return '[$\\colorbox{#00a99d}{\\color{#ffffff}\\textsf{+ Add PhotoBox}}$](https://app.revolt.chat/bot/01FE6KMPV60ZYTSE7TTQJ4TCCQ)';
   }
 }

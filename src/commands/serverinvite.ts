@@ -17,6 +17,6 @@ export default class ServerInviteCommand extends GeneralCommand {
   }
 
   async run() {
-    return "[$\\color{fc2929}\\fbox{\\textbf{\\textsf{+ Join Snazzah's Hangout}}}$](https://app.revolt.chat/invite/Pb3PJXH2)";
+    return "[$\\colorbox{#fc2929}{\\color{#ffffff}\\textsf{Join Snazzah's Hangout}}$](https://app.revolt.chat/invite/Pb3PJXH2)";
   }
 }

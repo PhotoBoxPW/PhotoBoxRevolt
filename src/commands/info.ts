@@ -25,9 +25,11 @@ export default class InfoCommand extends GeneralCommand {
 
   async run(ctx: CommandContext) {
     await ctx.reply(stripIndents`
-      ## \`📷\` [**PhotoBox**](https://github.com/PhotoBoxPW/PhotoBoxRevolt) - A Revolt bot that makes and sends images.
-      **${this.client.bot.servers.size.toLocaleString()}** servers
-      **${prettyMilliseconds(Math.round(process.uptime()) * 1000)}** uptime
+      $\\Large\\colorbox{#00a99d}{\\color{#ffffff}\\textsf{📷 PhotoBox}}$
+      $\\color{#ffffff}\\textsf{A Revolt bot that makes and sends images.}$
+      ** **
+      $\\textsf{📊 \\textbf{${this.client.bot.servers.size.toLocaleString()}} \\textsf{servers}}$
+      $\\textsf{🤖 \\textbf{${prettyMilliseconds(Math.round(process.uptime()) * 1000)}} \\textsf{uptime}}$
     `);
   }
 }
