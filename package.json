@@ -22,7 +22,7 @@
     "chalk": "^4.1.0",
     "common-tags": "^1.8.0",
     "config": "^3.3.3",
-    "dayjs": "^1.10.4",
+    "dayjs": "^1.10.7",
     "emojilib": "^3.0.1",
     "lodash": "^4.17.21",
     "needle": "^3.0.0",
