@@ -37,7 +37,7 @@
     "@types/lodash": "^4.14.176",
     "@types/needle": "^2.5.1",
     "@types/node": "^16.11.5",
-    "@types/validator": "^13.1.3",
+    "@types/validator": "^13.6.5",
     "@types/ws": "^8.2.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
