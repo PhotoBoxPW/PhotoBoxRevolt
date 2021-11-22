@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "common-tags": "^1.8.1",
+    "common-tags": "^1.8.2",
     "config": "^3.3.3",
     "dayjs": "^1.10.7",
     "emojilib": "^3.0.1",
