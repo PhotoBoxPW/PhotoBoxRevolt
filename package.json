@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/common-tags": "^1.8.0",
     "@types/config": "^0.0.40",
-    "@types/lodash": "^4.14.177",
+    "@types/lodash": "^4.14.178",
     "@types/needle": "^2.5.1",
     "@types/node": "^16.11.12",
     "@types/validator": "^13.7.0",
