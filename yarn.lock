@@ -722,10 +722,10 @@ emoji-regex@^8.0.0:
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-8.0.0.tgz#e818fd69ce5ccfcb404594f842963bf53164cc37"
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
-emojilib@^3.0.1:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/emojilib/-/emojilib-3.0.4.tgz#06e537f57da0180d7ce428fa1a86925f6d7946aa"
-  integrity sha512-3OKrO0w89pRXwA43X4/COCXNSlollHgryCCvodC4mIBIFYiuqgVp8UD//gY2AoL9ZBo90HQ71sDeLnj+ntfx4g==
+emojilib@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/emojilib/-/emojilib-3.0.5.tgz#85900495d7b1cdb0db73746dee344750feea6919"
+  integrity sha512-bJu+DlD0r3m8EOMbo+YMFP0O0OPIDSO+5wuaRTFQx9PMMmt2ucnExcP8nRixKemUEZbmasjfYIRYzLo3VnQLxA==
 
 enabled@2.0.x:
   version "2.0.0"
