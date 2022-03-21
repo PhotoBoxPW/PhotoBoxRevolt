@@ -23,7 +23,7 @@
     "common-tags": "^1.8.2",
     "config": "^3.3.7",
     "dayjs": "^1.11.0",
-    "emojilib": "^3.0.5",
+    "emojilib": "^3.0.6",
     "lodash": "^4.17.21",
     "needle": "^3.0.0",
     "pretty-ms": "^7.0.1",
