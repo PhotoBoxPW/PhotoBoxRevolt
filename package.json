@@ -28,7 +28,7 @@
     "needle": "^3.1.0",
     "pretty-ms": "^7.0.1",
     "triple-beam": "^1.3.0",
-    "voltare": "^0.3.4",
+    "voltare": "^1.0.2",
     "winston": "^3.8.1"
   },
   "devDependencies": {
